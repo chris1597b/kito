@@ -1,0 +1,318 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,user-scalable=no">
+	<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"> <!--...link iconos...-->
+	<link rel="stylesheet" type="text/css" href="tienda.css">
+	<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Roboto&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Koulen&family=Poppins:ital,wght@1,800&family=Source+Code+Pro:wght@200&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+	<link rel="icon" type="img/png" href="images1/1imag.jpg">
+	<!-- Boxicons CDN Link -->
+	
+	<title>tienda</title>
+</head>
+<body>
+	<header class="bar-menu">
+		<div class="siderbar">		
+			<div class="siderbar active">
+				<div class="logo">
+					<i  class="fa-brands fa-korvue"></i>
+					<div class="logo_name">kito</div>
+				</div>
+				<ul class="nav_list">
+					<li>
+						<a href="#">
+							<i class="fa-solid fa-magnifying-glass"></i>
+							<input type="text" placeholder="Buscar.." name="">
+						</a>					
+					</li>
+					<li>
+						<a href="#">
+							<i class="fa-solid fa-user-astronaut"></i>
+							<span class="links_name">User</span>
+						</a>			
+					</li>
+					<li>
+						<a href="index.html">
+							<i class="fa-brands fa-kickstarter-k"></i>
+							<span class="links_name">Inicio</span>
+						</a>			
+					</li>
+					<li>
+						<a href="tienda.html">
+							<i class="fa-solid fa-store"></i>
+							<span class="links_name">Carrito</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fa-solid fa-info"></i>
+							<span class="links_name">Nosotros</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fa-solid fa-id-card-clip"></i>		
+							<span class="links_name">Contactame</span>
+						</a>
+								
+					</li>
+				</ul>
+				<div class="profile_content">
+					<div class="profile">
+						<div class="profile_details">
+							<img src="images1/1imag.jpg" alt="">
+							<div class="name_job">
+								<div class="name">CHRISTOPHER</div>
+								<div class="job">Web designer</div>
+							</div>
+						</div>	
+						<i class="fa-solid fa-hand-point-left" id="log_out"></i>
+					</div>
+				</div>
+			</div>		
+		</div>
+	</header>
+	<div class="container">
+		<div class="container-slider">
+			<div class="slider" id="slider">
+				<div class="slider__section">
+					<img src="images1/1imag.jpg" class="slider__img">
+					<div class="slider__content">
+						<h2 class="slider__title">Equipo de Aventura</h2>
+						<p class="slider__txt">cool sumer</p>
+						<a href="" class="btn-shop">Comprar Ahora</a>
+					</div>
+				</div>
+				<div class="slider__section">
+					<img src="images1/2imag.jpg" class="slider__img"></img>
+					<div class="slider__content">
+						<h2 class="slider__title">Mochilas para Hombres</h2>
+						<p class="slider__txt">Aventura</p>
+						<a href="" class="btn-shop">Comprar Ahora</a>
+					</div>
+				</div>
+				<div class="slider__section">
+					<img src="images1/3imag.png" class="slider__img"></img>
+					<div class="slider__content">
+						<h2 class="slider__title">Accesorios</h2>
+						<p class="slider__txt">verano</p>
+						<a href="" class="btn-shop">Comprar Ahora</a>
+					</div>
+				</div>
+				<div class="slider__section">
+					<img src="images1/4imag.jpg" class="slider__img"></img>
+					<div class="slider__content">
+						<h2 class="slider__title">Laptos</h2>
+						<p class="slider__txt">Descuento del 20%</p>
+						<a href="" class="btn-shop">Comprar Ahora</a>
+					</div>
+				</div>
+				<div class="slider__btn slider__btn--right" id="btn-right">&#62;</div>
+				<div class="slider__btn slider__btn--left" id="btn-left">&#60;</div>
+			</div>  
+		</div>
+	</div>
+	<!-- lo puedo traer los nombres , precio ,etc de base de datos-->
+	<div class="container">
+		<main class="main">
+			<div class="container1">
+				<h2 class="main-title">Nuevos Productos para ti</h2>
+				<section class="container-productos">
+					<div class="product" >
+						<img src="images1/6imag.jpeg" alt="" class="product__img"></img>
+						<div class="product__description">
+							<h3 class="product__title">Opium(for men)</h3>
+							<span class="product__price">$ 05.00 USD</span>
+						<div id="smart-button-container">
+					      <div style="text-align: center;">
+					        <div id="paypal-button-container"></div>
+					      </div>
+					    </div>
+					  <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+					  <script>
+					    function initPayPalButton() {
+					      paypal.Buttons({
+					        style: {
+					          shape: 'rect',
+					          color: 'blue',
+					          layout: 'vertical',
+					          label: 'pay',
+					          
+					        },
+
+					        createOrder: function(data, actions) {
+					          return actions.order.create({
+					            purchase_units: [{"amount":{"currency_code":"USD","value":0.5}}]
+					          });
+					        },
+
+					        onApprove: function(data, actions) {
+					          return actions.order.capture().then(function(orderData) {
+					            
+					            // Full available details
+					            console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+					            // Show a success message within this page, e.g.
+					            const element = document.getElementById('paypal-button-container');
+					            element.innerHTML = '';
+					            element.innerHTML = '<h3>Thank you for your payment!</h3>';
+
+					            // Or go to another URL:  actions.redirect('thank_you.html');
+					            
+					          });
+					        },
+
+					        onError: function(err) {
+					          console.log(err);
+					        }
+					      }).render('#paypal-button-container');
+					    }
+					    initPayPalButton();
+					  </script>
+														        
+						</div>
+						<i class="product__icon fa-solid fa-cart-plus"></i>
+						</div>
+					<div class="product" >
+						<img src="images1/7imag.jpg" alt="" class="product__img"></img>
+						<div class="product__description">
+							<h3 class="product__title">Kenneth Cole (for girl)</h3>
+							<span class="product__price">s/500.00</span>
+						</div>
+						<i class="product__icon fa-solid fa-cart-plus"></i>
+					</div>
+					<div class="product" >
+						<img src="images1/8imag.jpeg" alt="" class="product__img"></img>
+						<div class="product__description">
+							<h3 class="product__title">Heydou Oval</h3>
+							<span class="product__price">s/650.00</span>
+						</div>
+						<i class="product__icon fa-solid fa-cart-plus"></i>
+					</div>
+					<div class="product" >
+						<img src="images1/9imag.jpeg" alt="" class="product__img"></img>
+						<div class="product__description">
+							<h3 class="product__title">Farenheit Oval</h3>
+							<span class="product__price">s/900.00</span>
+						</div>
+						<i class="product__icon fa-solid fa-cart-plus"></i>
+					</div>
+					<div class="product" >
+						<img src="images1/6imag.jpeg" alt="" class="product__img"></img>
+						<div class="product__description">
+							<h3 class="product__title">Opium(for men)</h3>
+							<span class="product__price">S/400.00</span>
+						</div>
+						<i class="product__icon fa-solid fa-cart-plus"></i>
+					</div>
+					<div class="product" >
+						<img src="images1/7imag.jpg" alt="" class="product__img"></img>
+						<div class="product__description">
+							<h3 class="product__title">Kenneth Cole (for girl)</h3>
+							<span class="product__price">s/500.00</span>
+						</div>
+						<i class="product__icon fa-solid fa-cart-plus"></i>
+					</div>
+					<div class="product" >
+						<img src="images1/8imag.jpeg" alt="" class="product__img"></img>
+						<div class="product__description">
+							<h3 class="product__title">Heydou Oval</h3>
+							<span class="product__price">s/650.00</span>
+						</div>
+						<i class="product__icon fa-solid fa-cart-plus"></i>
+					</div>
+					<div class="product" >
+						<img src="images1/9imag.jpeg" alt="" class="product__img"></img>
+						<div class="product__description">
+							<h3 class="product__title">Farenheit Oval</h3>
+							<span class="product__price">s/900.00</span>
+						</div>
+						<i class="product__icon fa-solid fa-cart-plus"></i>
+					</div>
+					<div class="product" >
+						<img src="images1/6imag.jpeg" alt="" class="product__img"></img>
+						<div class="product__description">
+							<h3 class="product__title">Opium(for men)</h3>
+							<span class="product__price">S/400.00</span>
+						</div>
+						<i class="product__icon fa-solid fa-cart-plus"></i>
+					</div>
+					<div class="product" >
+						<img src="images1/7imag.jpg" alt="" class="product__img"></img>
+						<div class="product__description">
+							<h3 class="product__title">Kenneth Cole (for girl)</h3>
+							<span class="product__price">s/500.00</span>
+						</div>
+						<i class="product__icon fa-solid fa-cart-plus"></i>
+					</div>
+					<div class="product" >
+						<img src="images1/8imag.jpeg" alt="" class="product__img"></img>
+						<div class="product__description">
+							<h3 class="product__title">Heydou Oval</h3>
+							<span class="product__price">s/650.00</span>
+						</div>
+						<i class="product__icon fa-solid fa-cart-plus"></i>
+					</div>
+					<div class="product" >
+						<img src="images1/9imag.jpeg" alt="" class="product__img"></img>
+						<div class="product__description">
+							<h3 class="product__title">Farenheit Oval</h3>
+							<span class="product__price">s/900.00</span>
+						</div>
+						<i class="product__icon fa-solid fa-cart-plus"></i>
+					</div>
+				</section>
+			</div>
+			<section class="container__testimonials">
+				<h2 class="section__title">TESTIMONIOS</h2>
+				<h3 class="testimonial__title">Christopher</h3>
+				<P class="testimonial__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</P>
+			</section>
+			<div class="container-editor">
+				<div class="editor__item">
+					<img  src="images1/1imag.jpg" alt="" class="editor__img">
+					<p class="editor__circle">Cambia tu Personalidad NOW</p>
+				</div>
+				<div class="editor__item">
+					<img  src="images1/2imag.jpg" alt="" class="editor__img">
+					<p class="editor__circle">Cambia tu Personalidad NOW</p>
+				</div>
+			</div>
+			<section class="container-tips">
+				<div class="tip">
+					<i class="fa-solid fa-hand"></i>
+					<h2 class="tip__title">Satisfacción Garantizada</h2>
+					<p class="tip__text">Te garanterizamos la mayor calidad , la mejor atencion y rapida entrega </p>
+					<a class="btn-shop">Compra 
+					Ahora</a>
+				</div>
+				<div class="tip">
+					<i class="fa-solid fa-rocket"></i>
+					<h2 class="tip__title">Envio Rapido</h2>
+					<p class="tip__text">Envios rapidos a todas las departamentos y distritos del PERU</p>
+					<a class="btn-shop">Compra Ahora</a>
+				</div>
+				<div class="tip">
+					<i class="fa-solid fa-gear"></i>
+					<h2 class="tip__title">Actualizacion</h2>
+					<p class="tip__text">Estamos trabajando para ofreces nuevos productos y descuentos en compra</p>
+					<a class="btn-shop">Compra Ahora</a>
+				</div>
+			</section>
+		</main>
+	</div>
+	<footer class="main-footer">
+
+	</footer>
+	<script src="slider.js"></script>
+</body>
+</html>
