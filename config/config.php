@@ -1,0 +1,12 @@
+<?php
+    define("CLIENT_ID","sb&enable-funding=venmo");
+    define("CURRENCY","USD");
+    define("KEY_TOKEN","BAR.dales-1597*");
+    define("MONEDA", "$");
+
+    session_start();
+    $num_cart = 0;
+    if(isset($_SESSION['carrito']['productos'])){
+    $num_cart = count($_SESSION['carrito']['productos']);
+    }
+?> 
