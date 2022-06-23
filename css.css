@@ -1,0 +1,272 @@
+/* PROPIEDADES GENERALES */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+
+    background-color: #fff; 
+    min-height: 100vh;
+    overflow-x: hidden; 
+    background: linear-gradient(45deg,#1a2f3f,#7094ce);
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 80px 30px 50px;
+    display: flex;
+    object-fit: cover;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2000;
+}
+
+header .logo{
+    width: 15vmax;
+    cursor: pointer;
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul li{
+    list-style: none;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 6px 15px;
+    border-radius: 20px;
+    color: #110011;
+    font-family: 'Poppins';
+}
+
+nav ul li a:hover,
+nav ul li a.active{
+    background: white;
+    color: #110011;
+    font-size: 20px;
+}
+
+section{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+section::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to top, #1C0522, transparent);
+    z-index: 10;
+}
+
+section img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+section #slogan{
+    position: absolute;
+    font-size: 7vmax;
+    text-align: center;
+    font-family: 'Rancho', sans-serif;
+    line-height: 0.8em;
+    white-space: nowrap;
+    transform: translateY(-200px);
+    color: white;
+    margin-top: 25vh;
+    z-index: 1;
+}
+
+section #btn{
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 30px;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: 500;
+    letter-spacing: 2px;
+    background: black;
+    border-radius: 20px; 
+    transform: translateY(20px); 
+    transform: translateX(60px); 
+}
+section #btn:hover{
+    background: linear-gradient(45deg,#1a2f3f,#7094ce);
+}
+
+.sec{
+    background: #1c0522;
+    position: relative;
+    padding: 80px;
+}
+
+.sec h1{
+    font-size: 3.5vw;
+    color: #fff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-family: 'Pacifico', cursive;
+}
+
+.sec h2{
+    font-size: 2vw;
+    color: #fff;
+    margin-bottom: 10px;
+    font-family: 'Indie Flower', cursive;
+}
+
+.sec p{
+    font-size: 1.2em;
+    color: #fff;
+}
+
+
+/*..... seccion redes...... */
+
+.seccion-redes{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.seccion-redes .li{
+    flex-grow: 1;/*La propiedad flex-grow de CSS especifica el factor de crecimiento de un elemento flexible (que tiene asignado display:flex)*/
+    position: relative;
+}
+.seccion-redes .li-redes ul{
+    display: flex;
+    list-style: none;
+}
+.seccion-redes .li-redes ul a{
+    color: rgba(255, 255, 255, .8);
+    text-decoration: none;
+    font-size: 2rem;
+}
+.seccion-redes .li-redes ul li + li,
+.seccion-redes .li-redes ul li:first-child{
+    margin-right: 2rem;
+}
+
+/*.....EFECTO SCROLL....*/
+/*...EFECTO.....*/
+::-webkit-scrollbar{
+    width: 0;
+}
+#scrollPath{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 100%;
+    background: rgba(255, 255, 255, .05);
+}
+#progessbar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10px;
+    background: linear-gradient(to top,#008aff,#00ffe7);
+    animation: animate 5s linear infinite;
+    z-index: 4000;
+}
+@keyframes animate
+{
+    0%,100%{
+        filter: hue-rotate(0deg);
+    }
+    50%{
+        filter: hue-rotate(360deg);
+    }
+}
+#progessbar:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top,#008aff,#00ffe7);
+    filter: blur(10px);
+}
+#progessbar:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top,#008aff,#00ffe7);
+    filter: blur(30px);
+}
+
+
+/* AHORA HAREMOS EL RESPONSIVO */
+@media (max-width: 991px){
+    .sec{
+        padding: 60px;
+    }
+    .sec p{
+        font-size: 1em;
+    }
+    header .menulist{
+        opacity: 0;
+    }
+    nav ul{
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+    }
+    nav.active ul{
+        position: relative;
+        top: 50px;
+        margin-left: -150px;
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+    }    
+    header .menu{
+        position: absolute;
+        right: 40px;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        background-image:  url('./../images/lista.svg');
+        background-size: 25px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    header .menu.active{
+        background-image: url('./../images/close.svg');
+        background-size: 25px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
